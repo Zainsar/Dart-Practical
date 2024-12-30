@@ -1,0 +1,186 @@
+Dart Installation from chocolate
+
+step by step 
+
+1. Prerequisites
+Before installing Chocolatey, ensure:
+
+You have administrative privileges.
+You have PowerShell v3+ or Command Prompt.
+.NET Framework 4+ is installed (most modern Windows systems already have this).
+
+2. Install Chocolatey
+Using PowerShell (Recommended):
+Open PowerShell as Administrator:
+
+Search for "PowerShell" in the Windows Start menu.
+Right-click and select Run as Administrator.
+Run the Installation Command: Copy and paste the following command and press Enter:
+
+"2. Install Chocolatey
+Using PowerShell (Recommended):
+Open PowerShell as Administrator:
+
+Search for "PowerShell" in the Windows Start menu.
+Right-click and select Run as Administrator.
+Run the Installation Command: Copy and paste the following command and press Enter:"
+
+Wait for Installation to Complete:
+
+Chocolatey will download and configure itself.
+Verify the Installation: Once the installation is complete, check if Chocolatey is installed by running:
+
+powershell
+
+choco --version
+
+It should display the installed version of Chocolatey.
+
+
+
+
+Using Command Prompt:
+Open Command Prompt as Administrator:
+
+Search for "cmd" in the Windows Start menu.
+Right-click and select Run as Administrator.
+Run the Installation Command: Copy and paste the following command and press Enter:
+
+cmd
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.WebClient]::New().DownloadString('https://chocolatey.org/install.ps1') | Invoke-Expression" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+Verify the Installation: Run the following command:
+
+cmd
+choco --version
+
+3. Troubleshooting
+If the command fails, ensure your system meets the prerequisites.
+If you get a script execution error, make sure PowerShell's execution policy is set to allow scripts:
+powershell
+
+"Set-ExecutionPolicy Bypass -Scope Process -Force"
+
+
+4. Using Chocolatey
+Now that Chocolatey is installed, you can use it to install software. For example:
+
+bash
+
+"choco install googlechrome"
+"choco install dart-sdk"
+
+Enjoy managing your software with Chocolatey! 🚀
+
+
+Aap Dart CLI (Command Line Interface) ka use karke naya project asaani se create kar sakte hain. Niche diye gaye steps ko follow karein:
+
+1. Command Prompt Ya Terminal Open Karein
+Press Win + R, type cmd, aur Enter press karein.
+Ya agar PowerShell ya kisi aur terminal ko use karna chahte hain, to usko bhi open kar sakte hain.
+2. Directory Select Karein
+Wahan jaayein jahan aap apna project create karna chahte hain. Example:
+
+bash
+
+cd C:\Users\YourUsername\Documents
+3. Dart Project Create Karne Ka Command Run Karein
+Naya Dart project banane ke liye dart create command ka use karein:
+
+bash
+
+dart create my_dart_project
+Yahaan:
+
+my_dart_project aapke project ka naam hai. Aap isse apne requirement ke mutabiq badal sakte hain.
+4. Project Folder Me Navigate Karein
+bash
+
+cd my_dart_project
+5. Dart Project Run Karein
+Project ko run karne ke liye:
+
+bash
+
+dart run
+6. Project Structure Samajhiye
+Dart project ke andar by default kuch files aur folders hote hain:
+
+bin/: Main executable file (e.g., bin/my_dart_project.dart).
+pubspec.yaml: Dependencies aur project configuration ke liye.
+README.md: Project ke details ke liye.
+Example
+Agar aap ek "Hello, World!" program run karna chahte hain:
+
+bin/my_dart_project.dart file open karein.
+Uske andar code likhein:
+dart
+
+void main() {
+  print('Hello, World!');
+}
+Command line se run karein:
+bash
+
+dart run
+Aapka output hoga:
+
+
+Hello, World!
+Aapka Dart project ab ready hai! Agar koi aur help chahiye to batayein. 😊
+
+if you facing this error 
+
+'dart' is not recognized as an internal or external command,
+operable program or batch file.
+
+
+so you can follow this step
+
+
+Yeh error tab aata hai jab Dart executable ko system ke PATH environment variable me sahi tarah se configure nahi kiya gaya hai. Niche diye gaye steps ko follow karke is problem ko solve karein:
+
+1. Verify Dart Installation
+Ensure karein ki Dart SDK successfully install hua hai:
+
+Dart SDK ki installation directory check karein. By default:
+makefile
+
+C:\Program Files\Dart
+2. PATH Variable Configure Karein
+Aapko Dart executable (dart.exe) ko PATH environment variable me manually add karna hoga.
+
+Steps:
+Environment Variables Open Karein:
+
+Right-click on This PC or My Computer, aur Properties select karein.
+Left side me Advanced system settings par click karein.
+Environment Variables button par click karein.
+System Variables Section Me PATH Ko Edit Karein:
+
+System Variables section me Path ko locate karein aur Edit par click karein.
+Dart SDK Ka Path Add Karein:
+
+New par click karein aur Dart SDK ka bin folder ka path add karein. Example:
+makefile
+
+C:\Program Files\Dart\dart-sdk\bin
+Changes Save Karein:
+
+OK button par click karke sabhi dialogs close karein.
+3. Verify Dart Command
+Command Prompt ya Terminal dubara open karein (nayi session me).
+Type karein:
+bash
+
+dart --version
+Agar Dart sahi se configure ho gaya hai, to aapko Dart ka installed version dikhega. Example:
+yaml
+
+Dart SDK version: 3.x.x
+4. Troubleshooting
+Agar still error aa raha ho, to:
+
+Ensure karein ki aapne terminal ko close karke dubara open kiya hai.
+Confirm karein ki aapne sahi path (C:\Program Files\Dart\dart-sdk\bin) add kiya hai.
+Reinstall karein Dart SDK aur installation process follow karein.
+Aapke Dart commands ab CLI me work karenge. Koi aur issue ho to batayein! 😊
